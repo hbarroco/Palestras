@@ -38,9 +38,9 @@ namespace DemoToken.Controllers
 
             return produto;
         }
-
-        [HttpPut("{id}")]
+                
         [ClaimsAuthorize("Produto","Editar")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutProduto(int id, Produto produto)
         {
             if (id != produto.Id)
